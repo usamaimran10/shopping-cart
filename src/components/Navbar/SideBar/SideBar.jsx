@@ -60,7 +60,7 @@ const Sidebar = ({ showHandler }) => {
         </div>
         <div className={classes.sidebarNav}>
           <div>
-            <img src="/Images/cart-icon.png" alt="N/A" />
+            <img src="/image/cart-icon.png" alt="N/A" />
           </div>
           <div className={classes.bug1}>
             <span>{products.length}</span>

@@ -10,7 +10,7 @@ const Navbar = ({ showSidebar, showHandler }) => {
       <div className={classes.nav}>
         <div onClick={showHandler}>
           <nav className={classes.navbar}>
-            <img src="/Images/cart-icon.png" alt="N/A"></img>
+            <img src="/image/cart-icon.png" alt="N/A"></img>
             <div className={classes.bug}>
               <span>{products.length}</span>
             </div>
