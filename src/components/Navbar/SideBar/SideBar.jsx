@@ -52,6 +52,7 @@ const Sidebar = ({ showHandler, showSidebar }) => {
   const clicked = () => {
     alert(`Checkout - Subtotal: $ ${total}`);
     console.log(total);
+    setProducts([]);
   };
   return (
     <Grow
