@@ -9,8 +9,15 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import DirectionsIcon from "@mui/icons-material/Directions";
-const Sizes = ({ changeHandler, filters, setFilters }) => {
-  const { setProducts, products } = useProductsContext();
+const Sizes = ({ changeHandler, filters, setFilters, setValue }) => {
+  const { products, setProducts } = useProductsContext();
+  const [input, setInput] = React.useState("");
+
+  // {
+  //   products.filters((val) => {
+  //    const data = products.includes.toLowerCase("c");
+  //   });
+  // }
 
   return (
     <div className={classes.sizesFilter}>
@@ -22,15 +29,26 @@ const Sizes = ({ changeHandler, filters, setFilters }) => {
           alignItems: "center",
           width: 200,
           marginBottom: 5,
+          marginTop: 0,
         }}
       >
         <InputBase
           sx={{ ml: 1, flex: 1 }}
           placeholder="Search Products"
           inputProps={{ "aria-label": "Search Products" }}
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
         />
         <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-        <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
+        <IconButton
+          type="button"
+          sx={{ p: "10px" }}
+          aria-label="search"
+          onClick={() => {
+            setValue(input);
+          }}
+        >
           <SearchIcon color="secondary" />
         </IconButton>
       </Paper>

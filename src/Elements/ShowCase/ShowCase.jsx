@@ -43,6 +43,7 @@ const ShowCase = ({ showHandler }) => {
     },
   ]);
   const [products, setProducts] = React.useState(productData);
+  const [value, setValue] = React.useState("");
   const changeHandler = (index) => {
     const data = [...filters];
     data[index].selected = !data[index].selected;
@@ -60,6 +61,18 @@ const ShowCase = ({ showHandler }) => {
     setProducts(filteredData.length > 0 ? filteredData : productData);
     setFilters(data);
   };
+  React.useEffect(() => {
+    if (value === "") {
+      setProducts(productData);
+      return;
+    }
+    const data = productData.filter((val) => {
+      return value.length > 1
+        ? val.productDesc.toLocaleLowerCase().includes(value)
+        : val.productDesc.split(" ")[0].toLowerCase()[0].includes(value);
+    });
+    setProducts(data);
+  }, [value]);
   return (
     <>
       <div className={classes.mobileSizes}>
@@ -68,6 +81,7 @@ const ShowCase = ({ showHandler }) => {
           changeHandler={changeHandler}
           filters={filters}
           setFilters={setFilters}
+          setValue={setValue}
         />
       </div>
       <Container maxWidth="400px">
@@ -77,6 +91,7 @@ const ShowCase = ({ showHandler }) => {
               changeHandler={changeHandler}
               filters={filters}
               setFilters={setFilters}
+              setValue={setValue}
             />
           </div>
 
