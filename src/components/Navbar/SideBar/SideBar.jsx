@@ -4,6 +4,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import SideBarCard from "./SideBarCard/SideBarCard";
 import { useProductsContext } from "../../../Context/Context";
 import { Grow } from "@mui/material";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Sidebar = ({ showHandler, showSidebar }) => {
   const { products, setProducts } = useProductsContext();
@@ -50,7 +52,16 @@ const Sidebar = ({ showHandler, showSidebar }) => {
   }, [products]);
 
   const clicked = () => {
-    alert(`Checkout - Subtotal: $ ${total}`);
+    //alert(`Checkout - Subtotal: $ ${total}`);
+    toast.info(`Checkout - Subtotal: $ ${total}`, {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
     console.log(total);
     setProducts([]);
   };
@@ -107,6 +118,7 @@ const Sidebar = ({ showHandler, showSidebar }) => {
             <button onClick={clicked} className={classes.checkoutButton}>
               Checkout
             </button>
+            <ToastContainer />
           </div>
         </div>
       </div>

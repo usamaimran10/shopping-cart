@@ -13,12 +13,6 @@ const Sizes = ({ changeHandler, filters, setFilters, setValue }) => {
   const { products, setProducts } = useProductsContext();
   const [input, setInput] = React.useState("");
 
-  // {
-  //   products.filters((val) => {
-  //    const data = products.includes.toLowerCase("c");
-  //   });
-  // }
-
   return (
     <div className={classes.sizesFilter}>
       <Paper

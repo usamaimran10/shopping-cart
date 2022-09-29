@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useProductsContext } from "../../Context/Context";
 import classes from "./ProductCard.module.css";
-
+import { ToastContainer } from "react-toastify";
 const ProductCard = ({
   image,
   secImage,
@@ -65,6 +65,7 @@ const ProductCard = ({
         >
           Add To Cart
         </button>
+        <ToastContainer />
       </div>
     </>
   );

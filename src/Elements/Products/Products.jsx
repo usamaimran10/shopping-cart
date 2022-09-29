@@ -2,6 +2,8 @@ import React from "react";
 import classes from "./Products.module.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { useProductsContext } from "../../Context/Context";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Products = ({ showHandler, productsData }) => {
   const { products, setProducts } = useProductsContext();
@@ -10,7 +12,16 @@ const Products = ({ showHandler, productsData }) => {
     let flag = true;
     products.forEach((val) => {
       if (val.id === id) {
-        alert("Already Exist, if you want to add more go to cart.");
+        // alert("Already Exist, if you want to add more go to cart.");
+        toast.info("Already Exist, if you want to add more go to cart.", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
         flag = false;
       }
     });
