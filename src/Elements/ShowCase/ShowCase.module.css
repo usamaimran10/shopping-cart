@@ -6,6 +6,13 @@
 .mobileSizes {
   display: none;
 }
+
+.filterSize {
+  min-width: 220px;
+}
+.Size {
+  min-width: 220px;
+}
 @media screen and (max-width: 998px) {
   .Size {
     display: none;

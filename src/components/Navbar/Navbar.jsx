@@ -16,7 +16,11 @@ const Navbar = ({ showSidebar, showHandler }) => {
             </div>
           </nav>
         </div>
-        <div>{showSidebar && <SideBar showHandler={showHandler} />}</div>
+        <div>
+          {showSidebar && (
+            <SideBar showHandler={showHandler} showSidebar={showSidebar} />
+          )}
+        </div>
       </div>
     </>
   );

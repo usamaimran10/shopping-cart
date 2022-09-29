@@ -64,6 +64,7 @@ const ShowCase = ({ showHandler }) => {
     <>
       <div className={classes.mobileSizes}>
         <Sizes
+          className={classes.filterSize}
           changeHandler={changeHandler}
           filters={filters}
           setFilters={setFilters}

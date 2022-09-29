@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useProductsContext } from "../../Context/Context";
 import classes from "./ProductCard.module.css";
 
 const ProductCard = ({
@@ -13,12 +14,25 @@ const ProductCard = ({
   id,
 }) => {
   const [enter, setEnter] = React.useState(false);
+  const { products, setProducts } = useProductsContext();
+  const [color, setColor] = React.useState(false);
+
   const handleEnter = () => {
     setEnter(true);
   };
   const handleLeave = () => {
     setEnter(false);
   };
+  React.useEffect(() => {
+    const data = products.filter((val) => {
+      return val.id === id;
+    });
+    if (data.length >= 1) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  }, [products]);
   return (
     <>
       <div
@@ -47,6 +61,7 @@ const ProductCard = ({
           onClick={() => {
             handleListen(id);
           }}
+          style={{ backgroundColor: color && "red" }}
         >
           Add To Cart
         </button>

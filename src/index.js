@@ -7,11 +7,9 @@ import { ProductsProvider } from "./Context/Context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <ProductsProvider>
-      <App />
-    </ProductsProvider>
-  </React.StrictMode>
+  <ProductsProvider>
+    <App />
+  </ProductsProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

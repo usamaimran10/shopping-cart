@@ -3,8 +3,9 @@ import classes from "./SideBar.module.css";
 import CloseIcon from "@mui/icons-material/Close";
 import SideBarCard from "./SideBarCard/SideBarCard";
 import { useProductsContext } from "../../../Context/Context";
+import { Grow } from "@mui/material";
 
-const Sidebar = ({ showHandler }) => {
+const Sidebar = ({ showHandler, showSidebar }) => {
   const { products, setProducts } = useProductsContext();
   const [total, setTotal] = React.useState(0);
 
@@ -53,7 +54,11 @@ const Sidebar = ({ showHandler }) => {
     console.log(total);
   };
   return (
-    <>
+    <Grow
+      in={showSidebar}
+      style={{ transformOrigin: "0 0 0" }}
+      {...(showSidebar ? { timeout: 500 } : {})}
+    >
       <div className={classes.SidebarContainer}>
         <div onClick={showHandler} className={classes.closeIcon}>
           <CloseIcon />
@@ -104,7 +109,7 @@ const Sidebar = ({ showHandler }) => {
           </div>
         </div>
       </div>
-    </>
+    </Grow>
   );
 };
 

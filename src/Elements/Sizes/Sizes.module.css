@@ -4,6 +4,10 @@
   flex-wrap: wrap;
 }
 
+.sizesFilter {
+  position: fixed;
+}
+
 .sizeBtn {
   border-radius: 50%;
   width: 37px;
