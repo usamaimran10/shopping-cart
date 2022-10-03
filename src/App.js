@@ -10,7 +10,11 @@ function App() {
   };
   return (
     <>
-      <Navbar showSidebar={showSidebar} showHandler={showHandler} />
+      <Navbar
+        showSidebar={showSidebar}
+        showHandler={showHandler}
+        setshowSidebar={setshowSidebar}
+      />
       <ShowCase showHandler={showHandler} />
     </>
   );

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import classes from "./SideBar.module.css";
 import CloseIcon from "@mui/icons-material/Close";
 import SideBarCard from "./SideBarCard/SideBarCard";
@@ -6,10 +7,13 @@ import { useProductsContext } from "../../../Context/Context";
 import { Grow } from "@mui/material";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CheckoutModal from "./SideBarCard/CheckOutModal/CheckoutModal";
 
-const Sidebar = ({ showHandler, showSidebar }) => {
+const Sidebar = ({ showHandler, showSidebar, setshowSidebar }) => {
   const { products, setProducts } = useProductsContext();
   const [total, setTotal] = React.useState(0);
+  const [checkoutModal, setCheckoutModal] = React.useState(false);
+  const [state, setState] = React.useState("");
 
   const handleClose = (id) => {
     const data = products.filter((val) => {
@@ -52,19 +56,11 @@ const Sidebar = ({ showHandler, showSidebar }) => {
   }, [products]);
 
   const clicked = () => {
-    //alert(`Checkout - Subtotal: $ ${total}`);
-    toast.info(`Checkout - Subtotal: $ ${total}`, {
-      position: "top-center",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-    console.log(total);
+    setCheckoutModal(true);
     setProducts([]);
+    setState(total);
   };
+
   return (
     <Grow
       in={showSidebar}
@@ -101,6 +97,7 @@ const Sidebar = ({ showHandler, showSidebar }) => {
                 quantity={val.quantity}
                 onAdd={handleAdd}
                 onRemove={handleRemove}
+                showSidebar={showSidebar}
               />
             );
           })}
@@ -118,7 +115,12 @@ const Sidebar = ({ showHandler, showSidebar }) => {
             <button onClick={clicked} className={classes.checkoutButton}>
               Checkout
             </button>
-            <ToastContainer />
+            <CheckoutModal
+              total={state}
+              open={checkoutModal}
+              setOpen={setCheckoutModal}
+              setshowSidebar={setshowSidebar}
+            />
           </div>
         </div>
       </div>

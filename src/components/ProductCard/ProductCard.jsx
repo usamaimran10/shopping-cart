@@ -65,7 +65,6 @@ const ProductCard = ({
         >
           Add To Cart
         </button>
-        <ToastContainer />
       </div>
     </>
   );

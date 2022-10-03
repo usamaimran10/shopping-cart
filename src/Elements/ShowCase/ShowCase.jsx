@@ -4,6 +4,7 @@ import Products from "../Products/Products";
 import Sizes from "../Sizes/Sizes";
 import classes from "./ShowCase.module.css";
 import productData from "../Products/productData";
+// import CheckoutModal from "../../components/Navbar/SideBar/SideBarCard/CheckOutModal/CheckoutModal";
 const ShowCase = ({ showHandler }) => {
   const [filters, setFilters] = React.useState([
     {
@@ -103,6 +104,8 @@ const ShowCase = ({ showHandler }) => {
             />
           </div>
         </div>
+
+        {/* <CheckoutModal/> */}
       </Container>
     </>
   );

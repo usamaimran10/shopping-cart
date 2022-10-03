@@ -16,7 +16,6 @@ const Sizes = ({ changeHandler, filters, setFilters, setValue }) => {
   return (
     <div className={classes.sizesFilter}>
       <Paper
-        component="form"
         sx={{
           p: "2px 4px",
           display: "flex",
@@ -32,13 +31,13 @@ const Sizes = ({ changeHandler, filters, setFilters, setValue }) => {
           inputProps={{ "aria-label": "Search Products" }}
           onChange={(e) => {
             setValue(e.target.value);
+            setInput(e.target.value);
           }}
         />
         <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
         <IconButton
           type="button"
           sx={{ p: "10px" }}
-          aria-label="search"
           onClick={() => {
             setValue(input);
           }}
