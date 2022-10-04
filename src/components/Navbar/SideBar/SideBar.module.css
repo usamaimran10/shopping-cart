@@ -133,6 +133,11 @@
     height: 40px;
     padding-left: 16px;
     padding-top: 6px;
-    background-color: green;
+    background-color: grey;
+    border-radius: 10px;
+  }
+  .noProduct {
+    height: 565px;
+    overflow-x: scroll;
   }
 }
