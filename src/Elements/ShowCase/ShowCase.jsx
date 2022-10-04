@@ -96,7 +96,7 @@ const ShowCase = ({ showHandler }) => {
             />
           </div>
 
-          <div>
+          <div className={classes.mobileproduct}>
             <Products
               productsData={products}
               showHandler={showHandler}

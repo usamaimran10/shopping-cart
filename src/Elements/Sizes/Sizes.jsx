@@ -16,6 +16,7 @@ const Sizes = ({ changeHandler, filters, setFilters, setValue }) => {
   return (
     <div className={classes.sizesFilter}>
       <Paper
+        className={classes.mobileInput}
         sx={{
           p: "2px 4px",
           display: "flex",
@@ -45,7 +46,7 @@ const Sizes = ({ changeHandler, filters, setFilters, setValue }) => {
           <SearchIcon color="secondary" />
         </IconButton>
       </Paper>
-      <span>Sizes:</span>
+      <span className={classes.mobileheading}>Sizes:</span>
       <div className={classes.sizes}>
         {filters.map((item, index) => {
           return (

@@ -112,3 +112,27 @@
   animation: 20s linear 0s infinite normal none running dvWuPe;
   transition: opacity 0.3s ease-in-out 0s; */
 }
+
+@media screen and (max-width: 998px) {
+  .SidebarContainer {
+    width: 100%;
+    background-color: rgb(29, 29, 29);
+    height: 100vh;
+    /* margin-left: 865px; */
+    color: white;
+    position: fixed;
+    right: 0;
+    z-index: 1;
+    transition: right 0.2s ease 0s;
+  }
+  .closeIcon {
+    position: relative;
+    left: 83%;
+    background-color: rgb(29, 29, 29);
+    width: 60px;
+    height: 40px;
+    padding-left: 16px;
+    padding-top: 6px;
+    background-color: green;
+  }
+}

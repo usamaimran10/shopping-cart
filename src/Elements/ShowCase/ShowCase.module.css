@@ -18,8 +18,13 @@
     display: none;
   }
   .mobileSizes {
+    margin-top: -40px;
     display: block;
     display: flex;
     justify-content: center;
+  }
+  .mobileproduct {
+    margin-top: 60px;
+    margin-left: auto;
   }
 }

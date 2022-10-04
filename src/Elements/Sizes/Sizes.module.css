@@ -50,10 +50,22 @@
   .para {
     display: none;
   }
+  .mobileheading {
+    display: none;
+  }
   .link {
     display: none;
   }
   .sizes {
     width: 360px;
+    position: static;
+  }
+  .mobileInput {
+    /* display: flex; */
+    /* justify-content: center; */
+    margin-left: 60px;
+  }
+  .sizesFilter {
+    position: static;
   }
 }
