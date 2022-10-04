@@ -141,3 +141,10 @@
     overflow-x: scroll;
   }
 }
+
+@media screen and (max-width: 1558px) {
+  .noProduct {
+    height: 600px;
+    overflow-x: scroll;
+  }
+}
