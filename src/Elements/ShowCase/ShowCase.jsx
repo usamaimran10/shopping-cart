@@ -69,8 +69,11 @@ const ShowCase = ({ showHandler }) => {
     }
     const data = productData.filter((val) => {
       return value.length > 1
-        ? val.productDesc.toLocaleLowerCase().includes(value)
-        : val.productDesc.split(" ")[0].toLowerCase()[0].includes(value);
+        ? val.productDesc.toLocaleLowerCase().includes(value.toLowerCase())
+        : val.productDesc
+            .split(" ")[0]
+            .toLowerCase()[0]
+            .includes(value.toLowerCase());
     });
     setProducts(data);
   }, [value]);
