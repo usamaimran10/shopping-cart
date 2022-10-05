@@ -113,13 +113,13 @@
   transition: opacity 0.3s ease-in-out 0s; */
 }
 
-@media screen and (max-width: 280px) and (min-width: 280) {
+@media screen and (max-width: 280px) and (min-width: 280px) {
   .SidebarContainer {
     width: 100%;
     height: 100%;
   }
   .noProduct {
-    height: 450px;
+    height: 350px;
   }
   .checkoutButton {
     width: 270px;
@@ -272,8 +272,15 @@
     background-color: grey;
     border-radius: 10px;
   }
-  .mainBtn {
-    box-shadow: 3px 4px 27px -8px black;
-    height: 30%;
+  .SidebarContainer {
+    width: 100%;
+    background-color: rgb(29, 29, 29);
+    height: 100vh;
+    /* margin-left: 865px; */
+    color: white;
+    position: fixed;
+    right: 0;
+    z-index: 1;
+    transition: right 0.2s ease 0s;
   }
 }
